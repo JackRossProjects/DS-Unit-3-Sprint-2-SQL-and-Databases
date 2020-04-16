@@ -3,7 +3,7 @@ import json
 import sqlite3
 
 '''
-client = pymongo.MongoClient("mongodb+srv://bigman:Bubblegum1@lambda-zitfv.mongodb.net/test?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://USER:PASS@CLUSTER.mongodb.net/test?retryWrites=true&w=majority")
 db = client.rpg
 
 # get the the data from rpg.json into a dictionary
@@ -37,7 +37,7 @@ data = char_curs.execute(query).fetchall()
 
 
 # Using 3.4 connection string
-client = pymongo.MongoClient("mongodb+srv://bigman:Bubblegum1@lambda-zitfv.mongodb.net/test?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://USER:PASS@CLUSTER.mongodb.net/test?retryWrites=true&w=majority")
 db = client.test
 
 
@@ -57,3 +57,10 @@ for row in data:
     db.test.insert_one(char_doc)
 
 print(list(db.test.find()))
+
+'''
+I still find it easier to use relational databases as opposed to MongoDB.
+Data retrieval seems more complicated in Mongo but it seems like I'll be
+able to do cooler things with it in the long run. I think I like relational
+systems better right now because I'm very confident with SQL.
+'''
