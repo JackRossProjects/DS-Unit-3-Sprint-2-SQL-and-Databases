@@ -3,8 +3,10 @@
 import sqlite3
 import os
 
-""" Part 1: open connection to blank db, makr cursor, create table, add data """
-DB_FILEPATH = os.path.join(os.path.dirname(__file__), 'demo_data.sqlite3')
+""" Part 1: open connection/cursor, create table, add data """
+DB_FILEPATH = os.path.join(
+    os.path.dirname(
+        __file__), '/home/jack/Desktop/unit3sprint2/demo_data.sqlite3')
 
 # Connection and cursor
 conn = sqlite3.connect(DB_FILEPATH)
@@ -20,9 +22,9 @@ CREATE TABLE IF NOT EXISTS demo (
 """
 result = curs.execute(query).fetchall()
 
-# Insert data
-# NOTE: you are going to want to delete an entries already in the DB otherwise these values will duplicate
-insertion_query = "INSERT INTO demo (s, x, y) VALUES ('g', 3, 9), ('v', 5, 7), ('f', 8, 7)"
+# Insert data into db
+insertion_query = '''INSERT INTO demo (
+    s, x, y)VALUES ('g', 3, 9), ('v', 5, 7), ('f', 8, 7)'''
 result = curs.execute(insertion_query).fetchall()
 
 # Commit insert so data will save
